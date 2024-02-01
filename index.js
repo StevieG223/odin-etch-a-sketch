@@ -1,10 +1,12 @@
 const containerDiv = document.getElementById("flex-grid");
+const updateButton = document.getElementById("update-button");
 
-for (let i=0; i < 16; i++){
+function createGrid(size=16){
+for (let i=0; i < size; i++){
     let divRow = document.createElement("div");
     divRow.setAttribute("id", "flex-row");
     containerDiv.appendChild(divRow);
-    for (let i=0; i < 16; i++){
+    for (let i=0; i < size; i++){
         let div = document.createElement("div");
         div.setAttribute("class", "square-div");
         div.addEventListener("mouseover", ()=>{
@@ -16,5 +18,14 @@ for (let i=0; i < 16; i++){
             }
             );
         divRow.appendChild(div);
-    }
+    }   
 }
+}
+createGrid();
+updateButton.addEventListener("click", ()=>{
+    containerDiv.replaceChildren("");
+    let gridSize = document.getElementById('grid-size').value;
+    createGrid(gridSize);
+})
+
+

@@ -52,11 +52,17 @@ body{
     border: 6px;
     border-style: double;
     border-color: #12372A;
+    gap: 14px;
 }
 
-label{
+label,
+button{
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: #12372A;
     font-weight: bold;
+}
+
+button{
+    border-radius: 10%;
 }
